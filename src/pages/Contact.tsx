@@ -148,9 +148,9 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: "info@datasaki.com",
+      details: "info@dataski.com",
       action: "Send an email",
-      link: "mailto:info@datasaki.com"
+      link: "mailto:info@dataski.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -184,7 +184,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
-              Have questions about our platform? Ready to start your journey with Datasaki? We're here to help.
+              Have questions about our platform? Ready to start your journey with Dataski? We're here to help.
             </p>
           </div>
         </div>
