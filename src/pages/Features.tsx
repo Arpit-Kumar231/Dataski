@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
-import { Brain, Database, LineChart, Code, Shield, Clock, Globe, Zap, CheckCircle } from "lucide-react";
+import { Brain, Database, LineChart, Code, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -117,7 +117,6 @@ const Features = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="container mx-auto px-6 md:px-12">
           <div 
@@ -135,7 +134,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* AI & ML Capabilities */}
       <section className="py-20 bg-gray-50" ref={capabilitiesRef}>
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -165,7 +163,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Benefits for SMEs */}
       <section className="py-20 md:py-32" ref={benefitsRef}>
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -199,7 +196,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Integration Logos */}
       <section className="py-20 bg-gray-50" ref={integrationsRef}>
         <div className="container mx-auto px-6 md:px-12">
           <div 
