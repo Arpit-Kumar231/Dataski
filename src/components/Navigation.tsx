@@ -30,7 +30,7 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold tracking-tight z-10">
-          Datasaki
+          Dataski
         </Link>
 
         {/* Desktop Navigation */}
