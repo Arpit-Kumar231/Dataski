@@ -39,14 +39,62 @@ const Contact = () => {
       threshold: 0.2,
     };
 
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target === formRef.current) {
+            setIsVisible(prev => ({ ...prev, form: true }));
+          } else if (entry.target === newsletterRef.current) {
+            setIsVisible(prev => ({ ...prev, newsletter: true }));
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    if (formRef.current) observer.observe(formRef.current);
+    if (newsletterRef.current) observer.observe(newsletterRef.current);
+
+    return () => {
+      clearTimeout(heroTimer);
+      observer.disconnect();
+    };
+  }, []);
+
+  const validateContactForm = () => {
+    const errors: Record<string, string> = {};
     
+    if (!formState.name.trim()) {
+      errors.name = "Name is required";
+    }
+    
+    if (!formState.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+      errors.email = "Please enter a valid email address";
+    }
+    
+    if (!formState.subject.trim()) {
+      errors.subject = "Subject is required";
+    }
+    
+    if (!formState.message.trim()) {
+      errors.message = "Message is required";
+    }
+    
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleContactSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    
+    if (!validateContactForm()) {
+      return;
+    }
     
     setIsSubmitting(true);
-    
     
     setTimeout(() => {
       setIsSubmitting(false);
